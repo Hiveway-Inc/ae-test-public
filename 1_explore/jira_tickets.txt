@@ -1,11 +1,11 @@
 # JIRA Export - Discount Engine Project
-## Sprint 23.4 - November 2024
+## Sprint 23.4 - August 2025
 
 ---
 ## DISC-101: Implement Coupon Validation Engine
 **Type:** Story
 **Status:** In Progress  
-**Assignee:** Mike Chen
+**Assignee:** Mike Rodriguez
 **Story Points:** 8
 **Sprint:** 23.4
 
@@ -24,19 +24,19 @@ As a system, I need to validate coupon codes against orders to determine applica
 
 ### Comments
 
-**Sarah Miller - Nov 15, 10:30 AM**
+**Sarah Chen - Aug 1, 10:30 AM**
 Make sure we handle the case sensitivity properly. Customers shouldn't have to match exact case.
 
-**Mike Chen - Nov 15, 11:15 AM**
+**Mike Rodriguez - Aug 1, 11:15 AM**
 @Sarah Roger that. Making it case-insensitive. Should we also trim whitespace?
 
-**Sarah Miller - Nov 15, 11:18 AM**  
+**Sarah Chen - Aug 1, 11:18 AM**  
 Yes! Definitely trim whitespace. Actually, strip ALL spaces, not just trim.
 
-**David Kim (QA) - Nov 16, 2:30 PM**
+**David Kim (QA) - Aug 2, 2:30 PM**
 What about the expiration check? Is it inclusive or exclusive of the expiration date?
 
-**Mike Chen - Nov 16, 2:45 PM**
+**Mike Rodriguez - Aug 2, 2:45 PM**
 Good question. I'm making it inclusive (<=) so coupons work ON the expiration date.
 
 ---
@@ -44,7 +44,7 @@ Good question. I'm making it inclusive (<=) so coupons work ON the expiration da
 **Type:** Bug
 **Priority:** High
 **Status:** In Review
-**Assignee:** Mike Chen
+**Assignee:** Mike Rodriguez
 **Story Points:** 3
 **Sprint:** 23.4
 
@@ -59,26 +59,26 @@ Stripe rejects any charge under $0.50. When discounts reduce order total below t
 
 ### Comments
 
-**Alex Thompson (Finance) - Nov 16, 11:00 AM**
+**Jennifer Walsh (Finance) - Aug 2, 11:00 AM**
 This is critical. We absolutely cannot charge customers more than their calculated total, but we also can't process charges under 50 cents.
 
-**Mike Chen - Nov 16, 11:30 AM**
+**Mike Rodriguez - Aug 2, 11:30 AM**
 Proposed solution: Mark as "applied" but include note about payment minimum in the message field.
 
-**Jessica Lee (Support) - Nov 16, 11:45 AM**
+**Jessica Lee (Support) - Aug 2, 11:45 AM**
 Please make the message super clear. Customers will be confused if it says "applied" but payment fails.
 
-**Mike Chen - Nov 16, 2:00 PM**
+**Mike Rodriguez - Aug 2, 2:00 PM**
 How about: "Discount applied successfully. Note: Order total below $0.50 minimum payment threshold"
 
-**Alex Thompson - Nov 16, 2:15 PM**
+**Jennifer Walsh - Aug 2, 2:15 PM**
 Works for me. Make sure the status is still "applied" for reporting.
 
 ---
 ## DISC-103: Implement Integer Cents Calculation
 **Type:** Technical Task  
 **Status:** Done
-**Assignee:** Mike Chen
+**Assignee:** Mike Rodriguez
 **Story Points:** 2
 **Sprint:** 23.4
 
@@ -93,20 +93,20 @@ To avoid floating point precision issues, implement all calculations using integ
 
 ### Comments
 
-**Mike Chen - Nov 18, 9:00 AM**
+**Mike Rodriguez - Aug 4, 9:00 AM**
 This will prevent the rounding issues we've been seeing. Working exclusively in integers.
 
-**David Kim - Nov 18, 9:30 AM**
+**David Kim - Aug 4, 9:30 AM**
 Don't forget to handle the division properly when converting back for display.
 
-**Mike Chen - Nov 18, 9:45 AM**
+**Mike Rodriguez - Aug 4, 9:45 AM**
 Good catch. Making sure we get proper decimal results when displaying dollar amounts.
 
 ---
 ## DISC-104: Validate Percentage Ranges
 **Type:** Task
 **Status:** To Do
-**Assignee:** Mike Chen  
+**Assignee:** Mike Rodriguez  
 **Story Points:** 1
 **Sprint:** 23.4
 
@@ -121,20 +121,20 @@ Add validation to ensure percentage discounts are within valid range. Note: Appl
 
 ### Comments
 
-**David Kim - Nov 19, 3:00 PM**
+**David Kim - Aug 5, 3:00 PM**
 Should we allow 0% discount? Technically valid but pointless.
 
-**Sarah Miller - Nov 19, 3:15 PM**
+**Sarah Chen - Aug 5, 3:15 PM**
 Yes, allow 0. Marketing might use it for tracking purposes.
 
-**Tom Richards (Marketing) - Nov 19, 3:30 PM**
+**Lisa Park (Marketing) - Aug 5, 3:30 PM**
 Actually we sometimes create 0% "coupons" just to track campaign engagement!
 
 ---
 ## DISC-105: Generate Summary Report
 **Type:** Story
 **Status:** In Progress
-**Assignee:** Mike Chen
+**Assignee:** Mike Rodriguez
 **Story Points:** 3
 **Sprint:** 23.4
 
@@ -150,16 +150,16 @@ Generate a markdown summary report with statistics about coupon usage.
 
 ### Comments
 
-**Sarah Miller - Nov 20, 10:00 AM**
+**Sarah Chen - Aug 6, 10:00 AM**
 Make sure the revenue impact is clear. Finance needs to see actual dollars saved.
 
-**Alex Thompson - Nov 20, 10:30 AM**
+**Jennifer Walsh - Aug 6, 10:30 AM**
 Format as currency with 2 decimal places please. $1,234.56 not 1234.56.
 
-**Mike Chen - Nov 20, 11:00 AM**
+**Mike Rodriguez - Aug 6, 11:00 AM**
 Should I show both "potential revenue" and "actual revenue after discounts"?
 
-**Alex Thompson - Nov 20, 11:15 AM**
+**Jennifer Walsh - Aug 6, 11:15 AM**
 Yes! And the difference between them is the "total discount amount"
 
 ---
@@ -167,7 +167,7 @@ Yes! And the difference between them is the "total discount amount"
 **Type:** Bug
 **Priority:** Medium
 **Status:** In Progress
-**Assignee:** Mike Chen
+**Assignee:** Mike Rodriguez
 **Story Points:** 2
 **Sprint:** 23.4
 
@@ -182,16 +182,16 @@ When amount_off discount exceeds order total, we get negative final amounts. Nee
 
 ### Comments
 
-**Brian Wilson (QA) - Nov 21, 2:00 PM**
+**Priya Patel (QA) - Aug 7, 2:00 PM**
 Found this testing 5OFF coupon on a $2.99 order. Shows -$2.01 final amount.
 
-**Mike Chen - Nov 21, 2:15 PM**
+**Mike Rodriguez - Aug 7, 2:15 PM**
 Interesting edge case. Should we cap at zero or show the actual negative?
 
-**Sarah Miller - Nov 21, 2:30 PM**
+**Sarah Chen - Aug 7, 2:30 PM**
 Cap at zero! We can't have negative totals in production.
 
-**Jessica Lee - Nov 21, 2:45 PM**
+**Jessica Lee - Aug 7, 2:45 PM**
 But make sure the message explains that the discount was larger than the total.
 
 ---
@@ -199,7 +199,7 @@ But make sure the message explains that the discount was larger than the total.
 **Type:** Bug
 **Priority:** High  
 **Status:** Done
-**Assignee:** Mike Chen
+**Assignee:** Mike Rodriguez
 **Story Points:** 1
 **Sprint:** 23.4
 
@@ -211,16 +211,16 @@ Strip all spaces from coupon codes before comparison.
 
 ### Comments
 
-**Jessica Lee - Nov 20, 4:00 PM**
+**Jessica Lee - Aug 6, 4:00 PM**
 URGENT: Multiple customer complaints. Marketing template has space in coupon code.
 
-**Mike Chen - Nov 20, 4:15 PM**
+**Mike Rodriguez - Aug 6, 4:15 PM**
 Quick fix: I'll strip all spaces from both the input and stored coupon codes.
 
-**Tom Richards - Nov 20, 4:30 PM**
+**Lisa Park - Aug 6, 4:30 PM**
 Sorry team! Template is fixed for future emails.
 
-**Mike Chen - Nov 20, 4:45 PM**
+**Mike Rodriguez - Aug 6, 4:45 PM**
 Fix deployed. Now handles: "SAVE10", "SAVE 10", "S A V E 1 0" all the same.
 
 ---
@@ -244,10 +244,10 @@ Add comprehensive input validation for both CSV and JSON files.
 
 ### Comments
 
-**David Kim - Nov 22, 10:00 AM**
+**David Kim - Aug 8, 10:00 AM**
 This is important for production. We need graceful error handling.
 
-**Sarah Miller - Nov 22, 10:15 AM**
+**Sarah Chen - Aug 8, 10:15 AM**
 Pushing to next sprint. Current validation is minimal but functional.
 
 ---
@@ -269,8 +269,8 @@ Optimize for large datasets (100k+ orders).
 
 ### Comments
 
-**Mike Chen - Nov 22, 3:00 PM**
+**Mike Rodriguez - Aug 8, 3:00 PM**
 Current implementation works fine for expected volumes (<10k orders).
 
-**Sarah Miller - Nov 22, 3:15 PM**
+**Sarah Chen - Aug 8, 3:15 PM**
 Let's revisit if we get performance complaints. Not critical for MVP.

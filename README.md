@@ -94,3 +94,52 @@ This is a simulated real-world scenario. To keep you focused:
 3. **Productivity with AI:** Your ability to deliver a substantial amount of work when empowered with AI tools. We expect to see significant output across all three phases within the time limit.
 
 4. **Technical Understanding:** Your lower-level technical knowledge. To successfully complete this assessment, you need to understand systems, standards, and programming fundamentals. While AI assists you, you still need technical prowess to guide it effectively.
+
+---
+
+## Evaluation Rubric (For Interviewers)
+
+Use this rubric to consistently score candidates across all three phases.
+
+### Phase 1: EXPLORE (25 points)
+
+| Criteria | Points | What to Look For |
+|----------|--------|------------------|
+| **Conflict Identification** | 10 | Did they identify the key conflicts? (case sensitivity, rounding method, expiration inclusive/exclusive, sub-$0.50 handling, minimum order requirements) |
+| **Requirements Extraction** | 8 | Did they extract concrete, actionable requirements from the noise? |
+| **Organization & Clarity** | 4 | Is the document well-structured and easy to follow? |
+| **Efficiency** | 3 | Did they use AI effectively to process the documentation quickly? |
+
+### Phase 2: PLAN (25 points)
+
+| Criteria | Points | What to Look For |
+|----------|--------|------------------|
+| **Decision Making** | 10 | Did they make clear decisions on all conflicts with reasoning? |
+| **Technical Completeness** | 8 | Does the plan address data structures, algorithms, edge cases, and output formats? |
+| **Feasibility** | 4 | Would this plan actually work if implemented? |
+| **Clarity** | 3 | Could another engineer implement from this plan? |
+
+### Phase 3: EXECUTE (50 points)
+
+| Criteria | Points | What to Look For |
+|----------|--------|------------------|
+| **Correctness** | 25 | Does the code produce correct output for all test cases? |
+| **Edge Case Handling** | 10 | Does it handle: expired coupons, invalid codes, sub-$0.50, negative totals, minimum requirements? |
+| **Code Quality** | 8 | Is the code clean, readable, and well-organized? |
+| **Plan Adherence** | 4 | Did they follow their own technical plan? |
+| **Error Handling** | 3 | Does it handle malformed input gracefully? |
+
+### Key Conflicts Candidates Should Identify
+
+1. **Case Sensitivity**: Engineering wants case-insensitive (user-friendly); Marketing wants case-sensitive (attribution tracking)
+2. **Rounding**: Whiteboard shows banker's rounding checked; emails say standard rounding
+3. **Expiration**: Technical spec says exclusive; stakeholder meeting decided inclusive
+4. **Sub-$0.50 Orders**: No final decision - make free vs. reject
+5. **Whitespace**: First trim only, then strip all spaces
+
+### Bonus Points (up to 10)
+
+- Exceptional documentation quality
+- Creative solutions to ambiguous requirements
+- Particularly elegant code implementation
+- Identifies additional edge cases not explicitly mentioned

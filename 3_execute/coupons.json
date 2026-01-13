@@ -4,31 +4,32 @@
       "code": "SAVE10",
       "type": "percent_off",
       "value": 10,
-      "expires_at": 1732406400
+      "expires_at": 1756080000
     },
     {
       "code": "WELCOME10",
-      "type": "percent_off", 
+      "type": "percent_off",
       "value": 10,
-      "expires_at": 1735689600
+      "expires_at": 1767225599
     },
     {
       "code": "5OFF",
       "type": "amount_off",
       "value": 5.00,
-      "expires_at": 1733011200
+      "min_total": 10.00,
+      "expires_at": 1756684799
     },
     {
       "code": "HALFPAST",
       "type": "percent_off",
       "value": 50,
-      "expires_at": 1733097600
+      "expires_at": 1755302399
     },
     {
       "code": "EXPIRED20",
       "type": "percent_off",
       "value": 20,
-      "expires_at": 1700524800
+      "expires_at": 1754092800
     }
   ]
 }
