@@ -27,4 +27,4 @@ logs/
 # Build outputs
 dist/
 build/
-out/
+out/GRADING_GUIDE.md

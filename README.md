@@ -101,11 +101,13 @@ This is a simulated real-world scenario. To keep you focused:
 
 Use this rubric to consistently score candidates across all three phases.
 
+**Note:** There are **5 key conflicts** intentionally hidden in the documentation. The answer key is maintained separately - contact the hiring team for the grading guide.
+
 ### Phase 1: EXPLORE (25 points)
 
 | Criteria | Points | What to Look For |
 |----------|--------|------------------|
-| **Conflict Identification** | 10 | Did they identify the key conflicts? (case sensitivity, rounding method, expiration inclusive/exclusive, sub-$0.50 handling, minimum order requirements) |
+| **Conflict Identification** | 10 | Did they identify the 5 key conflicts hidden in the documentation? |
 | **Requirements Extraction** | 8 | Did they extract concrete, actionable requirements from the noise? |
 | **Organization & Clarity** | 4 | Is the document well-structured and easy to follow? |
 | **Efficiency** | 3 | Did they use AI effectively to process the documentation quickly? |
@@ -124,18 +126,10 @@ Use this rubric to consistently score candidates across all three phases.
 | Criteria | Points | What to Look For |
 |----------|--------|------------------|
 | **Correctness** | 25 | Does the code produce correct output for all test cases? |
-| **Edge Case Handling** | 10 | Does it handle: expired coupons, invalid codes, sub-$0.50, negative totals, minimum requirements? |
+| **Edge Case Handling** | 10 | Does it handle the edge cases identified in their EXPLORE phase? |
 | **Code Quality** | 8 | Is the code clean, readable, and well-organized? |
 | **Plan Adherence** | 4 | Did they follow their own technical plan? |
 | **Error Handling** | 3 | Does it handle malformed input gracefully? |
-
-### Key Conflicts Candidates Should Identify
-
-1. **Case Sensitivity**: Engineering wants case-insensitive (user-friendly); Marketing wants case-sensitive (attribution tracking)
-2. **Rounding**: Whiteboard shows banker's rounding checked; emails say standard rounding
-3. **Expiration**: Technical spec says exclusive; stakeholder meeting decided inclusive
-4. **Sub-$0.50 Orders**: No final decision - make free vs. reject
-5. **Whitespace**: First trim only, then strip all spaces
 
 ### Bonus Points (up to 10)
 
